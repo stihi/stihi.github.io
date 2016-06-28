@@ -11,7 +11,8 @@ $(function() {
         var arrTxt = txt.split(/[\r\n]/);
         var result = '';
         arrTxt.forEach(function (str, i) {
-            var count = str.match(/[аоэиуыеёюя]/igm).length;
+            var count = 0;
+            if (str.length > 0) count = str.match(/[аоэиуыеёюя]/igm).length;
             var str2 = '';
             for (var P, L, R = [], V = 'аоэиуыеёюя', j = 0, J = str.length; j < J; j++) {
                 L = str.charAt(j), P = V.indexOf(L), R[j] = P < 0 ? L : ('<span class="text-danger">' + L + '</span>');
