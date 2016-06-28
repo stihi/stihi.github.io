@@ -5,7 +5,7 @@ $(function() {
     var $textarea = $('#text'),
         $result = $('#result');
     $textarea.autosize();
-    $textarea.keydown(function () {
+    $textarea.keyup(function () {
         var txt = $(this).val();
         $result.text(txt);
     });
